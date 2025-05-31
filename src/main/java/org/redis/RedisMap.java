@@ -49,7 +49,6 @@ public class RedisMap implements Map<String, String> {
         return jedis.hget(REDIS_KEY, key.toString());
     }
 
-    // теоретически value может быть null.. почему бы и да
     @Override
     public String put(String key, String value) {
         if (key == null || value == null) {
@@ -70,7 +69,6 @@ public class RedisMap implements Map<String, String> {
         return oldVal;
     }
 
-    // теоретически value может быть null.. почему бы и да
     @Override
     public void putAll(Map<? extends String, ? extends String> m) {
         if (m == null) {
